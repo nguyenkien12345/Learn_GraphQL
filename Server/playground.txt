@@ -1,0 +1,141 @@
+query MyMutationGetAllAuthor{
+  authors{
+    id,
+    name,
+    email,
+    age,
+    address,
+    books {
+      id,
+      name,
+      genre,
+      views
+    }
+  }
+}
+
+query MyMutationGetDetailAuthor{
+  author(id: "646a330758bf82273c919df9") {
+    id,
+    name,
+    email,
+    age,
+    address,
+    books {
+      id,
+      name,
+      genre,
+      views
+    }
+  }
+}
+
+mutation MyMutationCreateAuthor{
+  createAuthor(name: "Nguyễn Hồng Quân", email: "quanhongnguyen.com", age: 22, address: "Thành phố Hồ Chí Minh"){
+    id,
+    name,
+    email,
+    age,
+    address
+  }
+}
+
+mutation MyMutationUpdateAuthor{
+  updateAuthor(id: "646a325258bf82273c919df5", name: "NTK", email: "NTK@gmail.com") {
+    id,
+    name,
+    email,
+    age,
+    address
+  }
+}
+
+mutation MyMutationDeleteAuthor{
+  deleteAuthor(id: "646a26cb2a0fac1cbca0f501"){
+    id,
+    name,
+    email,
+    age,
+    address  
+  }
+}
+
+---------------------------------------------------------------------------------------------
+
+query MyMutationGetAllBook{
+  books {
+    id,
+    name,
+    genre,
+    views,
+    author {
+      name,
+      email,
+      age,
+      address
+    }
+  }
+}
+
+query MyMutationGetDetailBook{
+  book (id: "646a482d864a440e6c577aa1"){
+    id,
+    name,
+    genre,
+    views,
+    author {
+      id,
+      name,
+      email,
+      age,
+      address
+    }
+  }
+}
+
+mutation MyMutationCreateBook{
+  createBook(name: "Sách của Mai Thị Thanh Thúy", genre: "Văn học", authorId: "646a26a72a0fac1cbca0f4ff") {
+    id,
+    name,
+    genre,
+    views,
+    author {
+      name,
+      email,
+      age,
+      address
+    }
+  }
+}
+
+mutation MyMutationUpdateBook{
+  updateBook(id: "646a482d864a440e6c577aa1", genre: "Trinh thám", authorId: "646a325258bf82273c919df5") {
+    id,
+    name,
+    genre,
+    views,
+    author {
+      name,
+      email,
+      age,
+      address
+    }
+  }
+}
+
+mutation MyMutationDeleteBook{
+  deleteBook(id: "646a2b2f8c7ba91f74b6bc50") {
+    id,
+    name,
+    genre,
+    views,
+    author {
+      name,
+      email,
+      age,
+      address
+    }
+  }
+}
+
+
